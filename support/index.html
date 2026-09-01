@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WallConnectorLog — Support</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h1>Support</h1>
+<p class="lede">WallConnectorLog is a free, unofficial iPhone companion to the WallConnectorLog
+server.</p>
+
+<p>It shows live charger status, the real charge sessions the server has derived, and the
+charger's lifetime counters. It connects only to a server you run yourself.</p>
+
+<h2>Requirements</h2>
+
+<ul>
+  <li>A running <a href="https://github.com/mews-se/wallconnectorlog">WallConnectorLog</a>
+      server</li>
+  <li>The server reachable from your phone, by default on port 4680</li>
+</ul>
+
+<p>The server address is configured under Settings in the app. Nothing is filled in to begin
+with; until an address is in place, typing <code>demo</code> in the server field runs the app on
+built-in example data.</p>
+
+<h2>Common questions</h2>
+
+<p><strong>The app cannot reach my server.</strong> Check that the server answers from the
+phone's network, and that the address in Settings includes the port if you changed it — a bare
+address is assumed to use the default 4680. On a plain HTTP address, iOS will ask for permission
+to access devices on the local network the first time.</p>
+
+<p><strong>Why does the app need a server at all?</strong> The Wall Connector keeps no history of
+its own, so an app that only samples while it is open can never show a truthful charge list. The
+server polls the charger around the clock and derives the sessions; the app shows them.</p>
+
+<p><strong>A session's times look wrong.</strong> The app shows exactly what the server has
+logged. If the server's clock was wrong while a session was recorded — a machine that had just
+booted, for example — the timestamps carry that error. The energy figures come from the charger's
+own counters and are unaffected.</p>
+
+<h2>Questions and bug reports</h2>
+
+<p><a href="https://github.com/mews-se/wallconnectorlog-ios/issues">Open an issue on GitHub</a>,
+which is the best place for anything reproducible, or write to
+<a href="mailto:wallconnectorlog@notmydomain.org">wallconnectorlog@notmydomain.org</a>.</p>
+
+<nav>
+  <a href="../">WallConnectorLog</a>
+  <a href="../privacy/">Privacy Policy</a>
+  <a href="../donate/">Donate</a>
+  <a href="../changelog/">Changelog</a>
+  <a href="https://github.com/mews-se/wallconnectorlog-ios">App source</a>
+  <a href="https://github.com/mews-se/wallconnectorlog">Server</a>
+</nav>
+
+<footer>
+This app is an unofficial community tool and is not affiliated with, endorsed by, or supported by
+Tesla, Inc.
+</footer>
+
+</body>
+</html>
