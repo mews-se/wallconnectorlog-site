@@ -18,15 +18,46 @@ issues.</p>
 
 <h2>Next</h2>
 
-<p>Nothing has been released yet — the first draft is taking shape on the
-<a href="https://github.com/mews-se/wallconnectorlog-ios/tree/dev"><code>dev</code> branch</a>.
-This page gets its first entry when a version reaches the App Store.</p>
+<p>Work on the next version gathers on the
+<a href="https://github.com/mews-se/wallconnectorlog-ios/tree/dev"><code>dev</code> branch</a>,
+next to the <a href="https://github.com/mews-se/wallconnectorlog-ios/issues">open issues</a>.</p>
+
+<h2>0.1 — 4 September 2026</h2>
+
+<p>The first version,
+<a href="https://apps.apple.com/app/wallconnectorlog/id6807546205">on the App Store</a>
+and tagged <a href="https://github.com/mews-se/wallconnectorlog-ios/releases/tag/v0.1">v0.1</a>
+on GitHub.</p>
+
+<p>It arrives with three tabs. Overview draws the grid, the charger and the car as one picture
+that lights up green where energy is moving, with the state the charger reports, the power
+flowing while a car is charging, and the session running right now. Below it sit tiles for phase
+currents and voltages, handle and electronics temperatures, the charger's Wi-Fi network and the
+grid readings; a chart of power over the last day; the lifetime counters the charger has kept
+since it was installed — energy delivered, charging time, connector and contactor cycles, cycles
+under load, thermal foldbacks, alerts and uptime — and the firmware version, part number and
+serial number in the footer. Sessions lists the real charge sessions the server has derived,
+grouped by month, with a session still running shown first under In progress. Each one opens on
+energy, time plugged in, time actually charging, peak power, peak handle temperature and average
+grid voltage, and recent sessions draw the power curve behind those figures. This is the part a
+phone cannot do on its own: the charger keeps no history, so an app that samples only while it is
+open can never show a truthful list. Settings holds the one thing the app needs, the address of
+your server, with a Test connection button that says whether it answers. About links the source
+code, the licence and a donate page for anyone who feels like giving back, and opens your own
+server's dashboard.</p>
+
+<p>With no server configured the app starts on a hint: type <code>demo</code> in the server field
+and every screen runs on built-in example data, so all of it can be tried before anything is set
+up. Plain HTTP is allowed to your own network — private addresses, <code>.local</code> names and
+hostnames without a dot — which covers a LAN and a VPN alike. English only, iPhone only, iOS 18
+or later, free and open source under the MIT licence.</p>
 
 <nav>
   <a href="../">WallConnectorLog</a>
   <a href="../privacy/">Privacy Policy</a>
   <a href="../support/">Support</a>
   <a href="../donate/">Donate</a>
+  <a href="https://apps.apple.com/app/wallconnectorlog/id6807546205">App Store</a>
   <a href="https://github.com/mews-se/wallconnectorlog-ios">Source</a>
   <a href="https://mews-se.github.io/evlog-site/">EVLog</a>
 </nav>
