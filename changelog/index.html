@@ -22,6 +22,53 @@ issues.</p>
 <a href="https://github.com/mews-se/wallconnectorlog-ios/tree/dev"><code>dev</code> branch</a>,
 next to the <a href="https://github.com/mews-se/wallconnectorlog-ios/issues">open issues</a>.</p>
 
+<h2>1.0 — 6 September 2026</h2>
+
+<p>The first proper release,
+<a href="https://apps.apple.com/app/wallconnectorlog/id6807546205">on the App Store</a>
+and tagged <a href="https://github.com/mews-se/wallconnectorlog-ios/releases/tag/v1.0">v1.0</a>
+on GitHub. 0.1 was a trial run to see how the app fared on the App Store; this is the version it
+was meant to be, and it closes every issue in the
+<a href="https://github.com/mews-se/wallconnectorlog-ios/milestone/1?closed=1">1.0 milestone</a>.
+Three of the additions — the curve for every session, the Wi-Fi history and the counter
+comparison — need
+<a href="https://github.com/mews-se/wallconnectorlog/releases/tag/v1.2">WallConnectorLog server 1.2</a>
+or later.</p>
+
+<p>The server address now takes a public name. Type the name your server sits behind on a
+reverse proxy and the app talks HTTPS to it on its own, no port and no scheme to remember; a
+scheme you type is kept, and a private address, a <code>.local</code> name or a hostname without
+a dot still gets plain HTTP on your own network. Grafana is one tap away: Graphs in Grafana sits
+on the overview and in About and opens the Grafana your server points to, or the address you set
+yourself in Settings. Settings has also gained a price per kWh, and a Diagnostics section with the
+age of the last reading, whether the server's clock agrees with the phone's, and the last poll
+error if there was one.</p>
+
+<p>The overview's power chart can show 24 hours, 7 days or 30 days, and a Grid quality card
+beneath it gives the span of voltage and frequency over that range with a voltage chart of its
+own. Under the power figure the app now says how many phases carry current and how much, so a
+single-phase charge is visible at a glance, and the car is struck through while nothing is plugged
+in. The Wi-Fi tile opens a history of the charger's signal and signal-to-noise ratio, and the
+Lifetime card, which now counts charge starts, opens a comparison of the energy the charger's own
+counter has delivered with what the server has logged, month by month, with the gap between
+them.</p>
+
+<p>Sessions shows a total for each month in its section headers, and the whole list can leave the
+phone as a CSV file through the share sheet. Every session now draws its power curve, not just the
+recent ones, with temperature and phase-current curves of its own, and each one states its idle
+time: how long the car sat plugged in without charging, and what share of the session that was.
+With a price set, the cost of a month and of a session appears next to its energy.</p>
+
+<p>A new Statistics tab sums things up for this week, this month, this year or all time: energy,
+with its cost when a price is set, the number of sessions, charging time and average power, then
+energy per day over the last 30 days and per month over the last 12, and a Records and averages
+card with the largest session, the longest charge and the highest power, each dated, the average
+charging power, the time plugged in but idle, and the all-time total.</p>
+
+<p>One fix: the demo's earlier sessions draw a real power curve instead of a flat line. As
+before, English only, iPhone only, iOS 18 or later, free and open source under the MIT
+licence.</p>
+
 <h2>0.1 — 4 September 2026</h2>
 
 <p>The first version,
