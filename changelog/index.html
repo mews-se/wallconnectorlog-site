@@ -22,6 +22,47 @@ issues.</p>
 <a href="https://github.com/mews-se/wallconnectorlog-ios/tree/dev"><code>dev</code> branch</a>,
 next to the <a href="https://github.com/mews-se/wallconnectorlog-ios/issues">open issues</a>.</p>
 
+<h2>1.1 — 28 September 2026</h2>
+
+<p>Two additions,
+<a href="https://apps.apple.com/app/wallconnectorlog/id6807546205">on the App Store</a>
+and tagged <a href="https://github.com/mews-se/wallconnectorlog-ios/releases/tag/v1.1">v1.1</a>
+on GitHub: a technical page with everything the charger reports, and a first home-screen widget.
+Together they close the
+<a href="https://github.com/mews-se/wallconnectorlog-ios/milestone/5?closed=1">1.1 milestone</a>.
+Neither needs a server update; both read the live reading the server already relays.</p>
+
+<p>The firmware line at the bottom of the overview now reads Technical information and opens a
+page that keeps every field the charger reports, as it reports it, where the overview picks the
+numbers that matter. Charger holds the part number, serial number, firmware version and branch,
+the backend the charger talks to, its config status, its uptime in days and hours and the three
+IEEE 1547 compliance checksums. Vehicle and pilot says whether a vehicle is connected and the
+contactor closed, gives the EVSE state as both code and text, the reasons the charger is not
+ready and its current alerts (None when the lists are empty, which is the good case), the vehicle
+current, the session's energy and time, and the pilot and proximity voltages. Grid lists the grid
+voltage and frequency, the voltage and current of each phase, the neutral current and the voltage
+on the two relay coils; Temperatures adds the PCBA and MCU to the handle, with the thermopile on
+the input terminals in microvolts; Network has the SSID, the signal in dBm, the signal-to-noise
+ratio and signal strength, whether the charger is connected and has internet, and its IP and MAC
+addresses; Lifetime counters repeats the nine counters from the overview's Lifetime card. A row
+with no value is left out, and whatever a firmware reports that the page does not know by name
+lands under Other fields, by its own key, so a new field shows up before the app has learned it.
+The page polls like the overview, every five seconds while charging and every fifteen otherwise,
+can be pulled to refresh, and ends with the age of the reading.</p>
+
+<p>The widget comes in a small and a medium size, listed as Charger in the widget gallery. Both
+show what the charger is doing, with a green dot while charging, a yellow one while a car is
+plugged in and a grey one otherwise; the small one shortens the state to Charging, Plugged in or
+Idle, the medium one has room for the charger's own wording. Beneath it sits the power in green
+while charging, with the session's energy under it, or the latest session's energy when nothing
+charges, and last how long ago the server read the charger. The medium one adds a column with the
+session time while charging or the Wi-Fi signal otherwise, the handle temperature and the grid
+voltage. It refreshes on WidgetKit's schedule — the widget asks to be read again after ten minutes
+while charging, five when the server cannot be reached and half an hour otherwise — and whenever
+the app's own polling sees the state, the power or the session's energy move. With no server set
+the widget says so, when the server cannot be reached it says that instead, and it follows the
+address whenever it changes in Settings; in demo mode it shows the demo charge.</p>
+
 <h2>1.0.1 — 7 September 2026</h2>
 
 <p>A small fix on top of 1.0,
