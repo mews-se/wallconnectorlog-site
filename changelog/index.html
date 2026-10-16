@@ -22,6 +22,39 @@ issues.</p>
 <a href="https://github.com/mews-se/wallconnectorlog-ios/tree/dev"><code>dev</code> branch</a>,
 next to the <a href="https://github.com/mews-se/wallconnectorlog-ios/issues">open issues</a>.</p>
 
+<h2>1.2 — 15 October 2026</h2>
+
+<p>One addition,
+<a href="https://apps.apple.com/app/wallconnectorlog/id6807546205">on the App Store</a>
+and tagged <a href="https://github.com/mews-se/wallconnectorlog-ios/releases/tag/v1.2">v1.2</a>
+on GitHub: what each charge cost at the spot price. The prices come from the server, so this
+needs <a href="https://github.com/mews-se/wallconnectorlog/releases/tag/v1.3">WallConnectorLog server 1.3</a>
+or later with a Swedish price area set in <code>WC_PRICE_AREA</code>, and
+<a href="https://github.com/mews-se/wallconnectorlog/releases/tag/v1.3.1">1.3.1</a> for the
+server's version in Diagnostics. Against an older server, or one without a price area, the app
+works as it did.</p>
+
+<p>Such a server fetches the day-ahead price for every quarter hour in its area, splits each
+session's energy by the quarter hour it was drawn in and prices it at that quarter's price, so the
+time of day a car charges shows in what it cost. It is the spot price alone, excluding VAT;
+network fees, energy tax and the supplier's margin come on top. Each session's details show that
+cost under the energy, with the area it was priced in, and Statistics adds it up under the
+period's energy for the week, the month, the year or all time. When the server could not price
+every session in the period, a line beneath the tiles says how many were left out of the sum. The
+cost is in kronor on every phone, since that is what the market quotes, and the CSV export gains
+two columns at the end, <code>spot_sek</code> and <code>spot_area</code>.</p>
+
+<p>On a server that prices sessions, the spot cost takes the place of the price per kWh typed in
+Settings, even for a session it could not price, so the two never mix in one sum; the footer under
+the price says so and names the area. With a server that does not price sessions, the typed price
+works as before.</p>
+
+<p>The overview gains a tile beneath the six, Spot price with the area, giving the price this
+quarter hour in kronor per kWh and, while a car is plugged in, what the running session has cost
+so far; the server updates that figure every five minutes. Diagnostics in Settings now shows the
+server's version, or Older than 1.3.1 for a server that does not report one. The demo prices its
+sessions and the running charge in SE3, so all of it can be tried without a server.</p>
+
 <h2>1.1 — 28 September 2026</h2>
 
 <p>Two additions,
